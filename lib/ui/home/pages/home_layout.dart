@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kokohub/ui/home/widgets/all_jokes_widget/all_jokes_widget.dart';
 
 class HomeLayout extends StatelessWidget {
   const HomeLayout({super.key});
@@ -10,6 +11,7 @@ class HomeLayout extends StatelessWidget {
         child: Column(
           children: [
             Text("Home Page"),
+            AllJokesWidget(),
           ],
         ));
   }

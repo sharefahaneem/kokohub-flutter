@@ -21,7 +21,7 @@ class AllJokesSuccessWidget extends StatelessWidget {
               top: 24.0,
             ),
             itemBuilder: (context, index) {
-              return Text(jokes[index].id);
+              return Text(jokes[index].type);
             },
             separatorBuilder: (_, __) => const SizedBox(
               height: 20.0,

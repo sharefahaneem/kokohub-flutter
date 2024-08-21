@@ -4,17 +4,17 @@ part 'joke.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class Joke {
-  final String id;
-  final String joke;
+  final String type;
+  final String setup;
   final String category;
 
   const Joke({
-    required this.id,
-    required this.joke,
+    required this.type,
+    required this.setup,
     required this.category,
   });
 
-  static const empty = Joke(id: '', joke: '', category: '');
+  static const empty = Joke(type: '', setup: '', category: '');
 
   factory Joke.fromJson(Map<String, dynamic> json) => _$JokeFromJson(json);
 

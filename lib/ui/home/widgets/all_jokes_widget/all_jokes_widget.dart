@@ -9,7 +9,7 @@ class AllJokesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AllJokesBloc, AllJokesState>(builder: (context, state) {
       return state.status.isSuccess
-          ? const Text('Success')
+          ? Text(state.jokes.setup)
           : state.status.isLoading
               ? const Center(
                   child: CircularProgressIndicator(),
