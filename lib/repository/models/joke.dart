@@ -2,18 +2,19 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'joke.g.dart';
 
-
 @JsonSerializable(fieldRename: FieldRename.snake)
 class Joke {
   final String id;
   final String joke;
   final String category;
 
-  const  Joke({
+  const Joke({
     required this.id,
     required this.joke,
     required this.category,
   });
+
+  static const empty = Joke(id: '', joke: '', category: '');
 
   factory Joke.fromJson(Map<String, dynamic> json) => _$JokeFromJson(json);
 
