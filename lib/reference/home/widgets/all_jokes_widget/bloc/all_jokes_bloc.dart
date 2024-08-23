@@ -1,7 +1,7 @@
-import 'package:flutter_kokohub/repository/joke_repository.dart';
+import 'package:flutter_kokohub/reference/repository/joke_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_kokohub/repository/models/model_barrel.dart';
+import 'package:flutter_kokohub/reference/repository/models/model_barrel.dart';
 
 part 'all_jokes_event.dart';
 part 'all_jokes_state.dart';

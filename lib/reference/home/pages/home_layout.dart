@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kokohub/ui/home/widgets/all_jokes_widget/all_jokes_widget.dart';
+import 'package:flutter_kokohub/reference/home/widgets/all_jokes_widget/all_jokes_widget.dart';
 
 class HomeLayout extends StatelessWidget {
   const HomeLayout({super.key});

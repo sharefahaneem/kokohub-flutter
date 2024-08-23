@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_kokohub/ui/home/widgets/all_jokes_widget/bloc/all_jokes_bloc.dart';
+import 'package:flutter_kokohub/reference/home/widgets/all_jokes_widget/bloc/all_jokes_bloc.dart';
 
 class AllJokesWidget extends StatelessWidget {
   const AllJokesWidget({super.key});

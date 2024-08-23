@@ -1,6 +1,6 @@
 import 'dart:convert';
- import 'package:flutter_kokohub/repository/models/joke.dart';
-import 'package:flutter_kokohub/repository/models/result_error.dart';
+ import 'package:flutter_kokohub/reference/repository/models/joke.dart';
+import 'package:flutter_kokohub/reference/repository/models/result_error.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 

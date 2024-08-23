@@ -1,20 +1,22 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_kokohub/ui/home/pages/home_page.dart';
+import 'package:flutter_kokohub/reference/home/pages/home_page.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
     super.onChange(bloc, change);
     if (bloc is Cubit) {
-      print(change);
+      log(change.toString());
     }
   }
 
   @override
   void onTransition(Bloc bloc, Transition transition) {
     super.onTransition(bloc, transition);
-    print(transition);
+    log(transition.toString());
   }
 }
 

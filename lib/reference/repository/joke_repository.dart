@@ -1,5 +1,5 @@
-import 'package:flutter_kokohub/repository/models/model_barrel.dart';
-import 'package:flutter_kokohub/service/joke_service.dart';
+import 'package:flutter_kokohub/reference/repository/models/model_barrel.dart';
+import 'package:flutter_kokohub/reference/service/joke_service.dart';
 
 class JokeRepository {
     final JokeService service;

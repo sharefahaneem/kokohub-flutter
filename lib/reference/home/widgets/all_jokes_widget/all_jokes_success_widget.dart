@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kokohub/repository/models/model_barrel.dart';
+import 'package:flutter_kokohub/reference/repository/models/model_barrel.dart';
 
 class AllJokesSuccessWidget extends StatelessWidget {
   final List<Joke> jokes;
