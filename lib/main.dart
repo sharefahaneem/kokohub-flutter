@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_kokohub/reference/home/pages/home_page.dart';
+import 'package:flutter_kokohub/reference/ui/home/pages/home_page.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
