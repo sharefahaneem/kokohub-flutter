@@ -24,7 +24,7 @@ class SplashPage extends StatelessWidget {
               )..add(GetIsLogin()),
             ),
           ],
-          child: SplashLayout(),
+          child: const SplashLayout(),
         ),
       ),
     );

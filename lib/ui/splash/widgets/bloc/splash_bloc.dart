@@ -8,7 +8,7 @@ part 'splash_state.dart';
 class SplashBloc extends Bloc<SplashEvent, SplashState> {
   final SplashRepository splashRepository;
 
-  SplashBloc({required this.splashRepository}) : super(SplashState()) {
+  SplashBloc({required this.splashRepository}) : super(const SplashState()) {
     on<GetIsLogin>(_mapGetIsLoginEventToState);
   }
 
