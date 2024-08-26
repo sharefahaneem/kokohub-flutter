@@ -17,7 +17,6 @@ class SplashState extends Equatable {
       : isLogin = isLogin ?? false;
 
   @override
-  // TODO: implement props
   List<Object?> get props => [status, isLogin];
 
   SplashState copyWith({SplashStatus? status, bool? isLogin}) {
