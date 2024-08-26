@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_kokohub/repository/splash_repostitory.dart';
+import 'package:flutter_kokohub/repository/splash_repository.dart';
 
 part 'splash_event.dart';
 part 'splash_state.dart';
