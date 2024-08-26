@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_kokohub/repository/service/shared_preferences_service.dart';
 import 'package:flutter_kokohub/ui/splash/pages/splash_page.dart';
 
 class AppBlocObserver extends BlocObserver {
@@ -20,7 +21,10 @@ class AppBlocObserver extends BlocObserver {
   }
 }
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await SharedPreferencesService.instance.init();
   Bloc.observer = AppBlocObserver();
   runApp(const MyApp());
 }
