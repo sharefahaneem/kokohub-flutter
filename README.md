@@ -22,7 +22,7 @@ KokoHub is a mobile application developed using Dart and Flutter. It is a school
   - `build_runner`: A build system for Dart code generation.
   - `json_serializable`: A package to handle JSON serialization in Dart.
   - `json_annotation`: Supports JSON serialization in Flutter.
-  
+
 ## Getting Started
 
 Follow these instructions to clone and run the KokoHub application on your local machine.
@@ -39,7 +39,7 @@ Follow these instructions to clone and run the KokoHub application on your local
    Open your terminal and run the following command:
 
    ```bash
-   git clone https://github.com/your-username/KokoHub.git
+   git clone https://github.com/your-username/kokohub-flutter.git
    ```
 2. **Navigate to the project directory:**
 
