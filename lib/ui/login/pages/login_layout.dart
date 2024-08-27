@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kokohub/constants/app_colors.dart';
+import 'package:flutter_kokohub/ui/login/widgets/login_button_widget.dart';
 import 'package:flutter_kokohub/ui/login/widgets/text_field_login_widget.dart';
 
 class LoginLayout extends StatelessWidget {
@@ -41,9 +42,9 @@ class LoginLayout extends StatelessWidget {
                 labelText: 'Password',
               ),
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Login'),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
+              child: LoginButtonWidget(),
             ),
             TextButton(
               onPressed: () {},
