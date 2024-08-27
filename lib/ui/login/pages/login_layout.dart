@@ -17,6 +17,43 @@ class LoginLayout extends StatelessWidget {
           ],
         ),
       ),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 100,
+              width: 100,
+              child: Placeholder(),
+            ),
+            TextFormField(),
+            TextFormField(),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Login'),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text('Forgot Password'),
+            ),
+            RichText(
+              text: const TextSpan(
+                text: "Don't have an account? ",
+                style: TextStyle(color: Colors.black),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: 'Sign up',
+                    style: TextStyle(
+                      color: Colors.blue, // Color of the clickable text
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
