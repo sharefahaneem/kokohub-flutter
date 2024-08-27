@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kokohub/constants/app_colors.dart';
+import 'package:flutter_kokohub/ui/login/widgets/text_field_login_widget.dart';
 
 class LoginLayout extends StatelessWidget {
   const LoginLayout({super.key});
@@ -26,8 +27,20 @@ class LoginLayout extends StatelessWidget {
               width: 100,
               child: Placeholder(),
             ),
-            TextFormField(),
-            TextFormField(),
+            const Padding(
+              padding: EdgeInsets.only(
+                  top: 8.0, bottom: 8.0, left: 24.0, right: 24.0),
+              child: TextFieldLoginWidget(
+                labelText: 'Email',
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(
+                  top: 8.0, bottom: 8.0, left: 24.0, right: 24.0),
+              child: TextFieldLoginWidget(
+                labelText: 'Password',
+              ),
+            ),
             ElevatedButton(
               onPressed: () {},
               child: const Text('Login'),
