@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kokohub/constants/app_colors.dart';
+import 'package:flutter_kokohub/ui/login/widgets/forgot_password_widget.dart';
 import 'package:flutter_kokohub/ui/login/widgets/login_button_widget.dart';
 import 'package:flutter_kokohub/ui/login/widgets/text_field_login_widget.dart';
 
@@ -46,10 +47,7 @@ class LoginLayout extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 8.0),
               child: LoginButtonWidget(),
             ),
-            TextButton(
-              onPressed: () {},
-              child: const Text('Forgot Password'),
-            ),
+            const ForgotPasswordWidget(),
             RichText(
               text: const TextSpan(
                 text: "Don't have an account? ",
