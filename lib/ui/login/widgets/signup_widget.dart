@@ -12,7 +12,7 @@ class SignupWidget extends StatelessWidget {
         style: TextStyle(color: Colors.black),
         children: <TextSpan>[
           TextSpan(
-            text: 'Sign up',
+            text: 'Sign up.',
             style: TextStyle(
               color: AppColors.loginButtonColor, // Color of the clickable text
             ),

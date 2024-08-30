@@ -10,6 +10,8 @@ class LoginLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -21,37 +23,72 @@ class LoginLayout extends StatelessWidget {
           ],
         ),
       ),
-      child: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 100,
-              width: 100,
-              child: Placeholder(),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  top: 8.0, bottom: 8.0, left: 24.0, right: 24.0),
-              child: TextFieldLoginWidget(
-                labelText: 'Email',
+      child: SafeArea(
+        child: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(minHeight: screenHeight),
+            child: const IntrinsicHeight(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  LogoImage(),
+                  _EmailFormField(),
+                  _PasswordFormField(),
+                  SizedBox(height: 34.0),
+                  LoginButtonWidget(),
+                  SizedBox(height: 16.0),
+                  ForgotPasswordWidget(),
+                  SizedBox(height: 40.0),
+                  SignupWidget(),
+                ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                  top: 8.0, bottom: 8.0, left: 24.0, right: 24.0),
-              child: TextFieldLoginWidget(
-                labelText: 'Password',
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
-              child: LoginButtonWidget(),
-            ),
-            ForgotPasswordWidget(),
-            SignupWidget(),
-          ],
+          ),
         ),
+      ),
+    );
+  }
+}
+
+class LogoImage extends StatelessWidget {
+  const LogoImage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 24.0),
+      child: Image.asset(
+        "assets/images/login_logo.png",
+        height: MediaQuery.of(context).size.height * 0.3,
+        width: MediaQuery.of(context).size.width * 0.4,
+      ),
+    );
+  }
+}
+
+class _EmailFormField extends StatelessWidget {
+  const _EmailFormField();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.only(bottom: 12.0, left: 24.0, right: 24.0),
+      child: TextFieldLoginWidget(
+        labelText: 'Email',
+      ),
+    );
+  }
+}
+
+class _PasswordFormField extends StatelessWidget {
+  const _PasswordFormField();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.only(top: 12.0, left: 24.0, right: 24.0),
+      child: TextFieldLoginWidget(
+        labelText: 'Password',
       ),
     );
   }
