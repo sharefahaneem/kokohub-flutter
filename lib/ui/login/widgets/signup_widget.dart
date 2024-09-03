@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kokohub/constants/app_colors.dart';
+import 'package:flutter/gestures.dart';
 
 class SignupWidget extends StatelessWidget {
   const SignupWidget({super.key});
@@ -7,15 +8,19 @@ class SignupWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
-      text: const TextSpan(
+      text: TextSpan(
         text: "Don't have an account? ",
-        style: TextStyle(color: Colors.black),
+        style: const TextStyle(color: Colors.black),
         children: <TextSpan>[
           TextSpan(
             text: 'Sign up.',
-            style: TextStyle(
+            style: const TextStyle(
               color: AppColors.loginButtonColor, // Color of the clickable text
             ),
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                //TODO: go to signup page
+              },
           ),
         ],
       ),

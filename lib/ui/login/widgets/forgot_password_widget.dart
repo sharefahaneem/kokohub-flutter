@@ -10,7 +10,9 @@ class ForgotPasswordWidget extends StatelessWidget {
       style: TextButton.styleFrom(
         foregroundColor: AppColors.loginButtonColor,
       ),
-      onPressed: () {},
+      onPressed: () {
+        //TODO: go to forget password page
+      },
       child: const Text(
         'Forgot Password?',
       ),

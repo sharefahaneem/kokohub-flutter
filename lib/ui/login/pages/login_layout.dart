@@ -5,8 +5,21 @@ import 'package:flutter_kokohub/ui/login/widgets/login_button_widget.dart';
 import 'package:flutter_kokohub/ui/login/widgets/signup_widget.dart';
 import 'package:flutter_kokohub/ui/login/widgets/text_field_login_widget.dart';
 
-class LoginLayout extends StatelessWidget {
+import '../../../utils/authentication_validator.dart';
+
+class LoginLayout extends StatefulWidget {
   const LoginLayout({super.key});
+
+  @override
+  State<LoginLayout> createState() => _LoginLayoutState();
+}
+
+class _LoginLayoutState extends State<LoginLayout> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  bool? get validate => _formKey.currentState?.validate();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +28,7 @@ class LoginLayout extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topCenter,
+          begin: Alignment.center,
           end: Alignment.bottomCenter,
           colors: [
             AppColors.loginColor1,
@@ -27,19 +40,33 @@ class LoginLayout extends StatelessWidget {
         child: SingleChildScrollView(
           child: ConstrainedBox(
             constraints: BoxConstraints(minHeight: screenHeight),
-            child: const IntrinsicHeight(
+            child: IntrinsicHeight(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  LogoImage(),
-                  _EmailFormField(),
-                  _PasswordFormField(),
-                  SizedBox(height: 34.0),
-                  LoginButtonWidget(),
-                  SizedBox(height: 16.0),
-                  ForgotPasswordWidget(),
-                  SizedBox(height: 40.0),
-                  SignupWidget(),
+                  const Expanded(child: LogoImage()),
+                  EmailFormField(emailController: emailController),
+                  PasswordFormField(passwordController: passwordController),
+                  const SizedBox(height: 34.0),
+                  LoginButtonWidget(
+                    onPressed: () {
+                      // TODO: create logic statement for login
+
+                      // if (validate != null && validate == true) {
+                      //   context.read<AuthBloc>().add(LoginRequested(
+                      //         emailController.text.trim(),
+                      //         passwordController.text.trim(),
+                      //       ));
+                      // }
+                    },
+                  ),
+                  const SizedBox(height: 16.0),
+                  const ForgotPasswordWidget(),
+                  const SizedBox(height: 60.0),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 40.0),
+                    child: SignupWidget(),
+                  ),
                 ],
               ),
             ),
@@ -66,29 +93,53 @@ class LogoImage extends StatelessWidget {
   }
 }
 
-class _EmailFormField extends StatelessWidget {
-  const _EmailFormField();
+class EmailFormField extends StatelessWidget {
+  final TextEditingController emailController;
+
+  const EmailFormField({
+    super.key,
+    required this.emailController,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(bottom: 12.0, left: 24.0, right: 24.0),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12.0, left: 24.0, right: 24.0),
       child: TextFieldLoginWidget(
+        controller: emailController,
+        keyboardType: TextInputType.emailAddress,
+        keyboardAction: TextInputAction.next,
         labelText: 'Email',
+        onSaved: (value) {
+          emailController.text = value!;
+        },
+        validator: (value) => AuthenticationValidator.emailValidation(value),
       ),
     );
   }
 }
 
-class _PasswordFormField extends StatelessWidget {
-  const _PasswordFormField();
+class PasswordFormField extends StatelessWidget {
+  final TextEditingController passwordController;
+
+  const PasswordFormField({
+    super.key,
+    required this.passwordController,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(top: 12.0, left: 24.0, right: 24.0),
+    return Padding(
+      padding: const EdgeInsets.only(top: 12.0, left: 24.0, right: 24.0),
       child: TextFieldLoginWidget(
+        controller: passwordController,
+        isPassword: true,
         labelText: 'Password',
+        keyboardAction: TextInputAction.next,
+        onSaved: (value) {
+          passwordController.text = value!;
+        },
+        validator: (value) => AuthenticationValidator.normalValidation(value),
       ),
     );
   }
