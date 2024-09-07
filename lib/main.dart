@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_kokohub/repository/service/shared_preferences_service.dart';
 import 'package:flutter_kokohub/ui/splash/pages/splash_page.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
@@ -38,6 +39,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en', 'US'),
+        Locale('id', 'ID'),
+      ],
       theme: ThemeData(
         // This is the theme of your application.
         //
