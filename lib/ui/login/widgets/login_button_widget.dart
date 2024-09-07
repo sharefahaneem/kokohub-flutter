@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_kokohub/constants/app_colors.dart';
 
 class LoginButtonWidget extends StatelessWidget {
-  const LoginButtonWidget({super.key});
+  final Function() onPressed;
+
+  const LoginButtonWidget({
+    super.key,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +19,7 @@ class LoginButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(30.0),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0),
         child: Text('Login'),
