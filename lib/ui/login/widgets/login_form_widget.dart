@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/authentication_validator.dart';
 import 'text_field_login_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EmailFormField extends StatelessWidget {
   final TextEditingController emailController;
@@ -44,7 +45,7 @@ class PasswordFormField extends StatelessWidget {
       child: TextFieldLoginWidget(
         controller: passwordController,
         isPassword: true,
-        labelText: 'Password',
+        labelText: AppLocalizations.of(context)!.passwordLabel,
         keyboardAction: TextInputAction.next,
         onSaved: (value) {
           passwordController.text = value!;
