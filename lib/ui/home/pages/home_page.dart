@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kokohub/repository/service/shared_preferences_service.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../bloc/app_nav_bar_cubit.dart';
+import '../widgets/home_app_bar.dart';
+import '../widgets/app_nav_bar_widget.dart';
+import 'home_layout.dart';
+import 'test_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,21 +13,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const Text('Is Login'),
-          ElevatedButton(
-              onPressed: () {
-                SharedPreferencesService.instance.setIsLogin('ISLOGIN', false);
-              },
-              child: const Text('Set isLogin to false')),
-          ElevatedButton(
-              onPressed: () {
-                SharedPreferencesService.instance.clear();
-              },
-              child: const Text('Clear Shared Preferences'))
-        ],
+      appBar: const HomeAppBar(),
+      body: BlocBuilder<AppNavBarCubit, AppNavBarState>(
+        builder: (context, state) {
+          return IndexedStack(
+            index: state.selectedIndex,
+            children: const [
+              HomeLayout(),
+              TestPage(), // later change to correct page
+              HomeLayout(), // later change to correct page
+              TestPage(), // later change to correct page
+              TestPage(), // later change to correct page
+            ],
+          );
+        },
       ),
+      bottomNavigationBar: const AppNavBarWidget(),
     );
   }
 }
