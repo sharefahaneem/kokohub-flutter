@@ -38,7 +38,7 @@ class SplashWidget extends StatelessWidget {
           ),
           Center(
             child: Image.asset(
-              "assets/logo.png",
+              "assets/images/logo.png",
               height: MediaQuery.of(context).size.height * 0.4,
               width: MediaQuery.of(context).size.width * 0.4,
             ),
